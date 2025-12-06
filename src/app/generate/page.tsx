@@ -158,26 +158,6 @@ export default function Page() {
             <ArrowLeft className="h-4 w-4" />
             Back to Form
           </Button>
-          <Button
-            onClick={handleGeneratePDF}
-            disabled={
-              isGenerating || !isDataReady || attendanceData.length === 0
-            }
-            className="group relative flex items-center gap-3 px-6 py-3 font-medium !bg-gradient-to-br !from-gray-900 !to-gray-950 text-white rounded-xl transition-all duration-200 hover:shadow-md overflow-hidden"
-          >
-            <div className="absolute inset-0 bg-gradient-to-b from-gray-900/30 to-transparent pointer-events-none" />
-            {isGenerating ? (
-              <>
-                <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white relative z-10" />
-                <span className="relative z-10">Generating...</span>
-              </>
-            ) : (
-              <>
-                <Download className="h-4 w-4 relative z-10" />
-                <span className="relative z-10">Download PDF Report</span>
-              </>
-            )}
-          </Button>
         </div>
 
         <div className="print:bg-white bg-white rounded-2xl shadow-lg print:shadow-none max-w-6xl mx-auto p-8 print:p-2">
