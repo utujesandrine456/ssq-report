@@ -5,16 +5,14 @@ import CalendarCard from "@/components/CalendarCard";
 import { useAttendanceStore } from "@/store/attendance-store";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Download } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 export default function Page() {
   const router = useRouter();
   const { reportDate, initializeFromStorage } = useAttendanceStore();
-  const [isGenerating, setIsGenerating] = useState(false);
   const [attendanceData, setAttendanceData] = useState<familyData[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [isDataReady, setIsDataReady] = useState(false);
 
   useEffect(() => {
     // Check URL parameters first (for PDF generation)
@@ -28,7 +26,6 @@ export default function Page() {
       try {
         const parsedData = JSON.parse(decodeURIComponent(dataParam));
         setAttendanceData([parsedData]);
-        setIsDataReady(true);
         dataLoaded = true;
       } catch (error) {
         console.error("Error parsing URL data:", error);
@@ -42,7 +39,6 @@ export default function Page() {
         try {
           const parsedData = JSON.parse(storedData);
           setAttendanceData(parsedData);
-          setIsDataReady(true);
         } catch (error) {
           console.error("Error parsing stored data:", error);
         }
@@ -60,51 +56,6 @@ export default function Page() {
 
     setIsLoading(false);
   }, [initializeFromStorage]);
-
-  const handleGeneratePDF = async () => {
-    if (!isDataReady || attendanceData.length === 0) {
-      alert("Please wait for the data to load before generating PDF");
-      return;
-    }
-
-    setIsGenerating(true);
-    try {
-      const dataParam = encodeURIComponent(JSON.stringify(attendanceData[0])); // Pass the first item, not the array
-      const dateParam = encodeURIComponent(reportDate);
-      const currentUrl = `${window.location.origin}${window.location.pathname}?data=${dataParam}&date=${dateParam}`;
-
-      const response = await fetch(
-        `${window.location.origin}/api/generate-pdf?url=${encodeURIComponent(
-          currentUrl
-        )}`,
-        {
-          method: "GET",
-          headers: {
-            Accept: "application/pdf",
-          },
-        }
-      );
-
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-
-      const blob = await response.blob();
-      const url = window.URL.createObjectURL(blob);
-      const link = document.createElement("a");
-      link.href = url;
-      link.download = `attendance-report-${reportDate}.pdf`;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      window.URL.revokeObjectURL(url);
-    } catch (error) {
-      console.error("Error generating PDF:", error);
-      alert("Error generating PDF. Please try again.");
-    } finally {
-      setIsGenerating(false);
-    }
-  };
 
   if (isLoading) {
     return (
