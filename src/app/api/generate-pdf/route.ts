@@ -23,7 +23,6 @@ export async function GET(req: NextRequest) {
 
     await new Promise((resolve) => setTimeout(resolve, 2000));
 
-    // Wait a bit more for the page to fully load with URL parameters
     await new Promise((resolve) => setTimeout(resolve, 3000));
 
     const hasTable = await page.evaluate(() => {

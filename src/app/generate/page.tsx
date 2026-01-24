@@ -15,7 +15,6 @@ export default function Page() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Check URL parameters first (for PDF generation)
     const urlParams = new URLSearchParams(window.location.search);
     const dataParam = urlParams.get("data");
     const dateParam = urlParams.get("date");
@@ -33,7 +32,6 @@ export default function Page() {
     }
 
     if (!dataLoaded) {
-      // Fallback to sessionStorage
       const storedData = sessionStorage.getItem("attendanceData");
       if (storedData) {
         try {
@@ -46,11 +44,9 @@ export default function Page() {
     }
 
     if (dateParam) {
-      // Set date from URL parameter (for PDF generation)
       const { setReportDate } = useAttendanceStore.getState();
       setReportDate(decodeURIComponent(dateParam));
     } else {
-      // Initialize the store with data from sessionStorage
       initializeFromStorage();
     }
 

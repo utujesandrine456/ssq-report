@@ -56,7 +56,6 @@ export default function Home() {
     initializeFromStorage,
   } = useAttendanceStore();
 
-  // Initialize from storage when component mounts
   React.useEffect(() => {
     initializeFromStorage();
   }, [initializeFromStorage]);
@@ -127,7 +126,7 @@ export default function Home() {
                               updateFamilyData(
                                 familyIndex,
                                 field as keyof typeof family,
-                                parseInt(e.target.value) || 0
+                                parseInt(e.target.value) || 0,
                               )
                             }
                             className="w-full h-8 text-sm"
