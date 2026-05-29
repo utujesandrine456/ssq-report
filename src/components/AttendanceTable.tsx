@@ -97,7 +97,7 @@ export default function AttendanceTable({ data }: { data: familyData }) {
       <div className="overflow-x-auto">
         <table className="w-full border-collapse shadow-lg rounded-lg overflow-hidden print:shadow-none print:text-base">
           <thead>
-            <tr className="bg-gradient-to-r from-gray-900 to-gray-950">
+            <tr className="bg-linear-to-r from-gray-900 to-gray-950">
               <th className="border border-gray-300 text-white p-4 print:p-3 print:text-base font-semibold text-left">
                 FEATURES
               </th>
@@ -224,7 +224,7 @@ export default function AttendanceTable({ data }: { data: familyData }) {
                   </td>
                 </tr>
               ))}
-            <tr className="bg-gradient-to-r from-gray-100 to-gray-200 font-bold">
+            <tr className="bg-linear-to-r from-gray-100 to-gray-200 font-bold">
               <td className="border border-gray-300 p-4 print:p-2 print:text-sm font-bold text-gray-900">
                 TOTAL PERCENTAGE (%)
               </td>
@@ -276,7 +276,7 @@ export default function AttendanceTable({ data }: { data: familyData }) {
               FAMILY RANKING
             </h2>
           </div>
-          <div className="flex-shrink-0">
+          <div className="shrink-0">
             <Image
               src="/sda_logo.svg"
               alt="SDA Logo"
@@ -291,7 +291,7 @@ export default function AttendanceTable({ data }: { data: familyData }) {
           <div className="overflow-hidden rounded-lg shadow-lg print:shadow-none">
             <table className="w-full border-collapse">
               <thead>
-                <tr className="bg-gradient-to-r from-gray-900 to-gray-950">
+                <tr className="bg-linear-to-r from-gray-900 to-gray-950">
                   <th className="border border-gray-300 text-white p-4 print:p-3 print:text-base font-semibold text-left">
                     FAMILY
                   </th>
@@ -337,7 +337,7 @@ export default function AttendanceTable({ data }: { data: familyData }) {
           <div className="overflow-hidden rounded-lg shadow-lg print:shadow-none">
             <table className="w-full border-collapse">
               <thead>
-                <tr className="bg-gradient-to-r from-gray-900 to-gray-950">
+                <tr className="bg-linear-to-r from-gray-900 to-gray-950">
                   <th className="border border-gray-300 text-white p-4 print:p-3 print:text-base font-semibold text-center">
                     CHURCH OVERALL
                   </th>

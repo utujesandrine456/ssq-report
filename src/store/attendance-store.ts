@@ -2,6 +2,7 @@ import { create } from "zustand";
 
 export interface FamilyData {
   name: string;
+  abanditswe: number;
   abaje: number;
   abizeKarindwi: number;
   abatangiyeIsabato: number;
@@ -13,7 +14,7 @@ export interface FamilyData {
   abasibye: number;
   abafiteImpamvu: number;
   abashyitsi: number;
-  abanditswe: number;
+
 }
 
 interface AttendanceStore {
@@ -43,14 +44,14 @@ const initialFamilies: FamilyData[] = [
     abizeKarindwi: 0,
     abatangiyeIsabato: 0,
     abasuye: 0,
-    abafashije: 0,
     abasuwe: 0,
+    abafashije: 0,
     abafashijwe: 0,
     abarwayi: 0,
     abasibye: 0,
     abafiteImpamvu: 0,
     abashyitsi: 0,
-    abanditswe: 0,
+    abanditswe: 13,
   },
   {
     name: "Salvation Siblings",
@@ -58,14 +59,14 @@ const initialFamilies: FamilyData[] = [
     abizeKarindwi: 0,
     abatangiyeIsabato: 0,
     abasuye: 0,
-    abafashije: 0,
     abasuwe: 0,
+    abafashije: 0,
     abafashijwe: 0,
     abarwayi: 0,
     abasibye: 0,
     abafiteImpamvu: 0,
     abashyitsi: 0,
-    abanditswe: 0,
+    abanditswe: 13,
   },
   {
     name: "Jehova Nissi",
@@ -73,14 +74,14 @@ const initialFamilies: FamilyData[] = [
     abizeKarindwi: 0,
     abatangiyeIsabato: 0,
     abasuye: 0,
-    abafashije: 0,
     abasuwe: 0,
+    abafashije: 0,
     abafashijwe: 0,
     abarwayi: 0,
     abasibye: 0,
     abafiteImpamvu: 0,
     abashyitsi: 0,
-    abanditswe: 0,
+    abanditswe: 16,
   },
 ];
 

@@ -55,14 +55,14 @@ export default function Page() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100">
+      <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-gray-50 to-gray-100">
         <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-gray-900"></div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 print:min-h-0">
+    <div className="min-h-screen bg-linear-to-br from-gray-50 to-gray-100 print:min-h-0">
       <div className="print:mx-0 print:my-0 mx-8 py-8 print:py-2">
         <style jsx global>{`
           @media print {
@@ -117,7 +117,7 @@ export default function Page() {
                 </h1>
               </div>
             </div>
-            <div className="flex-shrink-0">
+            <div className="shrink-0">
               <Image
                 src="/sda_logo.svg"
                 alt="SDA Logo"
@@ -156,9 +156,9 @@ export default function Page() {
                 </p>
                 <Button
                   onClick={() => router.push("/")}
-                  className="group relative flex items-center gap-3 px-6 py-3 font-medium !bg-gradient-to-br !from-gray-900 !to-gray-950 text-white rounded-xl transition-all duration-200 hover:shadow-md overflow-hidden"
+                  className="group relative flex items-center gap-3 px-6 py-3 font-medium bg-linear-to-br! from-gray-900! to-gray-950! text-white rounded-xl transition-all duration-200 hover:shadow-md overflow-hidden"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-b from-gray-900/30 to-transparent pointer-events-none" />
+                  <div className="absolute inset-0 bg-linear-to-b from-gray-900/30 to-transparent pointer-events-none" />
                   <ArrowLeft className="h-4 w-4 relative z-10" />
                   <span className="relative z-10">Go Back to Form</span>
                 </Button>

@@ -21,8 +21,8 @@ const fieldLabels: Record<string, string> = {
   abizeKarindwi: "Abize Karindwi",
   abatangiyeIsabato: "Abatangiye Isabato",
   abasuye: "Abasuye",
-  abafashije: "Abafashije",
   abasuwe: "Abasuwe",
+  abafashije: "Abafashije",
   abafashijwe: "Abafashijwe",
   abarwayi: "Abarwayi",
   abasibye: "Abasibye",
@@ -36,8 +36,8 @@ const allFields = [
   "abizeKarindwi",
   "abatangiyeIsabato",
   "abasuye",
-  "abafashije",
   "abasuwe",
+  "abafashije",
   "abafashijwe",
   "abarwayi",
   "abasibye",
@@ -68,11 +68,12 @@ export default function Home() {
     router.push("/generate");
   };
 
+  
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+    <div className="min-h-screen bg-linear-to-br from-gray-50 to-gray-100">
       <div className="max-w-6xl mx-auto py-12 sm:py-24 px-4 sm:px-6">
         <div className="text-center mb-12">
-          <h1 className="mx-auto w-full text-balance text-center font-semibold tracking-tight text-neutral-900 max-w-2xl text-2xl !leading-[1.2] sm:text-4xl md:text-5xl">
+          <h1 className="mx-auto w-full text-balance text-center font-semibold tracking-tight text-neutral-900 max-w-2xl text-2xl leading-[1.2]! sm:text-4xl md:text-5xl">
             RCA-SDA Sabbath School Report Generator
           </h1>
         </div>
@@ -142,10 +143,10 @@ export default function Home() {
               <div className="flex justify-center pt-8">
                 <Button
                   type="submit"
-                  className="group relative flex items-center gap-3 px-8 py-6 text-lg font-medium !bg-gradient-to-br !from-gray-900 !to-gray-950 text-white rounded-xl transition-all duration-200 hover:shadow-md overflow-hidden"
+                  className="group relative flex items-center gap-3 px-8 py-6 text-lg font-medium bg-linear-to-br! from-gray-900! to-gray-950! text-white rounded-xl transition-all duration-200 hover:shadow-md overflow-hidden"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-b from-gray-900/30 to-transparent pointer-events-none" />
-                  <span className="relative z-10 font-[500] text-[16px]">
+                  <div className="absolute inset-0 bg-linear-to-b from-gray-900/30 to-transparent pointer-events-none" />
+                  <span className="relative z-10 font-medium text-[16px]">
                     Generate Report
                   </span>
                   <div className="relative z-10 bg-white rounded-full flex items-center justify-center size-4 transition-all duration-200 group-hover:translate-x-1">

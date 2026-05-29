@@ -19,12 +19,14 @@ export const calculatePercentage = (stats: {
     (stats.abizeKarindwi / stats.abanditswe) * 100,
     (stats.abatangiyeIsabato / stats.abanditswe) * 100,
     (stats.abasuye / stats.abanditswe) * 100,
+    (stats.abasuwe / stats.abanditswe) * 100,
     (stats.abafashije / stats.abanditswe) * 100,
+    (stats.abafashijwe / stats.abanditswe) * 100,
   ];
 
   const sumOfPercentages = percentages.reduce(
     (sum, percentage) => sum + percentage,
     0
   );
-  return (sumOfPercentages / 500) * 100;
+  return (sumOfPercentages / 700) * 100;
 };
