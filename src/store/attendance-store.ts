@@ -117,6 +117,30 @@ export const useAttendanceStore = create<AttendanceStore>((set, get) => ({
       if (storedDate) {
         set({ reportDate: storedDate });
       }
+      const storedData = sessionStorage.getItem("attendanceData");
+      if (storedData) {
+        try {
+          const parsedData = JSON.parse(storedData);
+          if (parsedData && parsedData.length > 0) {
+            const data = parsedData[0];
+            set((state) => ({
+              families: state.families.map((family) => {
+                let familyKey = "";
+                if (family.name === "Ebenezer") familyKey = "ebenezer";
+                else if (family.name === "Salvation Siblings") familyKey = "salvSibs";
+                else if (family.name === "Jehova Nissi") familyKey = "jehovahNissi";
+
+                if (familyKey && data[familyKey]) {
+                  return { ...family, ...data[familyKey] };
+                }
+                return family;
+              })
+            }));
+          }
+        } catch (e) {
+          console.error("Error parsing stored data", e);
+        }
+      }
     }
   },
 

@@ -121,106 +121,91 @@ export default function AttendanceTable({ data }: { data: familyData }) {
               .map(([key], index) => (
                 <tr
                   key={key}
-                  className={`${
-                    index % 2 === 0 ? "bg-gray-50" : "bg-white"
-                  } hover:bg-gray-100 print:hover:bg-transparent transition-colors`}
+                  className={`${index % 2 === 0 ? "bg-gray-50" : "bg-white"
+                    } hover:bg-gray-100 print:hover:bg-transparent transition-colors`}
                 >
                   <td className="border border-gray-300 p-4 print:p-2 print:text-sm font-medium text-gray-900">
                     {fieldLabels[key] || key.toUpperCase()}
                   </td>
                   <td
-                    className={`border border-gray-300 p-4 print:p-2 print:text-sm text-center font-medium ${
-                      key !== "abanditswe" &&
+                    className={`border border-gray-300 p-4 print:p-2 print:text-sm text-center font-medium ${key !== "abanditswe" &&
                       [
                         "abaje",
                         "abizeKarindwi",
                         "abatangiyeIsabato",
                         "abasuye",
+                        "abasuwe",
                         "abafashije",
                       ].includes(key) &&
                       families.ebenezer[key as keyof typeof families.ebenezer] <
-                        families.ebenezer.abanditswe / 2
-                        ? "text-red-600 bg-red-50"
-                        : "text-gray-900"
-                    }`}
+                      families.ebenezer.abanditswe / 2
+                      ? "text-red-600 bg-red-50"
+                      : "text-gray-900"
+                      }`}
                   >
                     {families.ebenezer[
                       key as keyof typeof families.ebenezer
-                    ] === 0
-                      ? "—"
-                      : families.ebenezer[
-                          key as keyof typeof families.ebenezer
-                        ]}
+                    ]}
                   </td>
                   <td
-                    className={`border border-gray-300 p-4 print:p-2 print:text-sm text-center font-medium ${
-                      key !== "abanditswe" &&
+                    className={`border border-gray-300 p-4 print:p-2 print:text-sm text-center font-medium ${key !== "abanditswe" &&
                       [
                         "abaje",
                         "abizeKarindwi",
                         "abatangiyeIsabato",
                         "abasuye",
+                        "abasuwe",
                         "abafashije",
                       ].includes(key) &&
                       families.salvSibs[key as keyof typeof families.salvSibs] <
-                        families.salvSibs.abanditswe / 2
-                        ? "text-red-600 bg-red-50"
-                        : "text-gray-900"
-                    }`}
+                      families.salvSibs.abanditswe / 2
+                      ? "text-red-600 bg-red-50"
+                      : "text-gray-900"
+                      }`}
                   >
                     {families.salvSibs[
                       key as keyof typeof families.salvSibs
-                    ] === 0
-                      ? "—"
-                      : families.salvSibs[
-                          key as keyof typeof families.salvSibs
-                        ]}
+                    ]}
                   </td>
                   <td
-                    className={`border border-gray-300 p-4 print:p-2 print:text-sm text-center font-medium ${
-                      key !== "abanditswe" &&
+                    className={`border border-gray-300 p-4 print:p-2 print:text-sm text-center font-medium ${key !== "abanditswe" &&
                       [
                         "abaje",
                         "abizeKarindwi",
                         "abatangiyeIsabato",
                         "abasuye",
+                        "abasuwe",
                         "abafashije",
                       ].includes(key) &&
                       families.jehovahNissi[
-                        key as keyof typeof families.jehovahNissi
+                      key as keyof typeof families.jehovahNissi
                       ] <
-                        families.jehovahNissi.abanditswe / 2
-                        ? "text-red-600 bg-red-50"
-                        : "text-gray-900"
-                    }`}
+                      families.jehovahNissi.abanditswe / 2
+                      ? "text-red-600 bg-red-50"
+                      : "text-gray-900"
+                      }`}
                   >
                     {families.jehovahNissi[
                       key as keyof typeof families.jehovahNissi
-                    ] === 0
-                      ? "—"
-                      : families.jehovahNissi[
-                          key as keyof typeof families.jehovahNissi
-                        ]}
+                    ]}
                   </td>
                   <td
-                    className={`border border-gray-300 p-4 print:p-2 print:text-sm text-center font-bold ${
-                      key !== "abanditswe" &&
+                    className={`border border-gray-300 p-4 print:p-2 print:text-sm text-center font-bold ${key !== "abanditswe" &&
                       [
                         "abaje",
                         "abizeKarindwi",
                         "abatangiyeIsabato",
                         "abasuye",
+                        "abasuwe",
                         "abafashije",
                       ].includes(key) &&
                       families.church[key as keyof typeof families.church] <
-                        families.church.abanditswe / 2
-                        ? "text-red-600 bg-red-50"
-                        : "text-gray-900"
-                    }`}
+                      families.church.abanditswe / 2
+                      ? "text-red-600 bg-red-50"
+                      : "text-gray-900"
+                      }`}
                   >
-                    {families.church[key as keyof typeof families.church] === 0
-                      ? "—"
-                      : families.church[key as keyof typeof families.church]}
+                    {families.church[key as keyof typeof families.church]}
                   </td>
                 </tr>
               ))}
@@ -229,38 +214,34 @@ export default function AttendanceTable({ data }: { data: familyData }) {
                 TOTAL PERCENTAGE (%)
               </td>
               <td
-                className={`border border-gray-300 p-4 print:p-2 print:text-sm text-center font-bold ${
-                  calculatePercentage(families.ebenezer) < 50
-                    ? "text-red-600"
-                    : "text-gray-900"
-                }`}
+                className={`border border-gray-300 p-4 print:p-2 print:text-sm text-center font-bold ${calculatePercentage(families.ebenezer) < 50
+                  ? "text-red-600"
+                  : "text-gray-900"
+                  }`}
               >
                 {calculatePercentage(families.ebenezer).toFixed(1)}%
               </td>
               <td
-                className={`border border-gray-300 p-4 print:p-2 print:text-sm text-center font-bold ${
-                  calculatePercentage(families.salvSibs) < 50
-                    ? "text-red-600"
-                    : "text-gray-900"
-                }`}
+                className={`border border-gray-300 p-4 print:p-2 print:text-sm text-center font-bold ${calculatePercentage(families.salvSibs) < 50
+                  ? "text-red-600"
+                  : "text-gray-900"
+                  }`}
               >
                 {calculatePercentage(families.salvSibs).toFixed(1)}%
               </td>
               <td
-                className={`border border-gray-300 p-4 print:p-2 print:text-sm text-center font-bold ${
-                  calculatePercentage(families.jehovahNissi) < 50
-                    ? "text-red-600"
-                    : "text-gray-900"
-                }`}
+                className={`border border-gray-300 p-4 print:p-2 print:text-sm text-center font-bold ${calculatePercentage(families.jehovahNissi) < 50
+                  ? "text-red-600"
+                  : "text-gray-900"
+                  }`}
               >
                 {calculatePercentage(families.jehovahNissi).toFixed(1)}%
               </td>
               <td
-                className={`border border-gray-300 p-4 print:p-2 print:text-sm text-center font-bold ${
-                  calculatePercentage(families.church) < 50
-                    ? "text-red-600"
-                    : "text-gray-900"
-                }`}
+                className={`border border-gray-300 p-4 print:p-2 print:text-sm text-center font-bold ${calculatePercentage(families.church) < 50
+                  ? "text-red-600"
+                  : "text-gray-900"
+                  }`}
               >
                 {calculatePercentage(families.church).toFixed(1)}%
               </td>
@@ -314,17 +295,15 @@ export default function AttendanceTable({ data }: { data: familyData }) {
                   .map(({ name, percentage }, index) => (
                     <tr
                       key={name}
-                      className={`${
-                        index % 2 === 0 ? "bg-gray-50" : "bg-white"
-                      } hover:bg-gray-100 print:hover:bg-transparent transition-colors`}
+                      className={`${index % 2 === 0 ? "bg-gray-50" : "bg-white"
+                        } hover:bg-gray-100 print:hover:bg-transparent transition-colors`}
                     >
                       <td className="border border-gray-300 p-4 print:p-2 print:text-sm font-medium text-gray-900">
                         {name}
                       </td>
                       <td
-                        className={`border border-gray-300 p-4 print:p-2 print:text-sm text-center font-bold ${
-                          percentage < 50 ? "text-red-600" : "text-gray-900"
-                        }`}
+                        className={`border border-gray-300 p-4 print:p-2 print:text-sm text-center font-bold ${percentage < 50 ? "text-red-600" : "text-gray-900"
+                          }`}
                       >
                         {percentage.toFixed(1)}%
                       </td>
@@ -346,11 +325,10 @@ export default function AttendanceTable({ data }: { data: familyData }) {
               <tbody className="bg-white">
                 <tr>
                   <td
-                    className={`border border-gray-300 p-8 print:p-4 text-center font-bold text-2xl print:text-xl ${
-                      calculatePercentage(families.church) < 50
-                        ? "text-red-600 bg-red-50"
-                        : "text-gray-900 bg-gray-50"
-                    }`}
+                    className={`border border-gray-300 p-8 print:p-4 text-center font-bold text-2xl print:text-xl ${calculatePercentage(families.church) < 50
+                      ? "text-red-600 bg-red-50"
+                      : "text-gray-900 bg-gray-50"
+                      }`}
                   >
                     {calculatePercentage(families.church).toFixed(1)}%
                   </td>
