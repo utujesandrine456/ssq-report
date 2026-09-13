@@ -120,18 +120,22 @@ export default function Home() {
                           </Label>
                           <Input
                             id={`${familyIndex}-${field}`}
-                            type="number"
-                            min="0"
-                            value={family[field as keyof typeof family] || 0}
-                            onChange={(e) =>
+                            type="text"
+                            inputMode="numeric"
+                            value={
+                              family[field as keyof typeof family] === 0
+                                ? ""
+                                : String(family[field as keyof typeof family] ?? "")
+                            }
+                            onChange={(e) => {
+                              const raw = e.target.value.replace(/[^\d]/g, "");
                               updateFamilyData(
                                 familyIndex,
                                 field as keyof typeof family,
-                                parseInt(e.target.value) || 0,
-                              )
-                            }
-                            className="w-full h-8 text-sm"
-                            required
+                                raw === "" ? 0 : parseInt(raw, 10),
+                              );
+                            }}
+                            className="w-full h-10 text-sm"
                           />
                         </div>
                       ))}
@@ -143,7 +147,7 @@ export default function Home() {
               <div className="flex justify-center pt-8">
                 <Button
                   type="submit"
-                  className="group relative flex items-center gap-3 px-8 py-6 text-lg font-medium bg-linear-to-br! from-gray-900! to-gray-950! text-white rounded-xl transition-all duration-200 hover:shadow-md overflow-hidden"
+                  className="group relative flex items-center gap-3 px-8 py-6 text-lg font-medium bg-linear-to-br! from-gray-900! to-gray-950! text-white rounded-md transition-all duration-200 hover:shadow-md overflow-hidden cursor-pointer"
                 >
                   <div className="absolute inset-0 bg-linear-to-b from-gray-900/30 to-transparent pointer-events-none" />
                   <span className="relative z-10 font-medium text-[16px]">

@@ -51,7 +51,7 @@ const initialFamilies: FamilyData[] = [
     abasibye: 0,
     abafiteImpamvu: 0,
     abashyitsi: 0,
-    abanditswe: 13,
+    abanditswe: 0,
   },
   {
     name: "Salvation Siblings",
@@ -66,7 +66,7 @@ const initialFamilies: FamilyData[] = [
     abasibye: 0,
     abafiteImpamvu: 0,
     abashyitsi: 0,
-    abanditswe: 13,
+    abanditswe: 0,
   },
   {
     name: "Jehova Nissi",
@@ -81,7 +81,7 @@ const initialFamilies: FamilyData[] = [
     abasibye: 0,
     abafiteImpamvu: 0,
     abashyitsi: 0,
-    abanditswe: 16,
+    abanditswe: 0,
   },
 ];
 

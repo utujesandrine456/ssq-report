@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${publicSans.variable} antialiased`}
+        className={`${publicSans.variable} ${publicSans.className} antialiased`}
         suppressHydrationWarning
       >
         {children}

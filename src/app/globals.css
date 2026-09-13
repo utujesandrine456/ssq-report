@@ -1,6 +1,9 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+/* Explicitly scan app source so utility classes are generated in production */
+@source "..";
+
 @custom-variant dark (&:is(.dark *));
 
 * {
